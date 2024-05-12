@@ -198,6 +198,11 @@ impl HeapDescriptorRef {
     }
 
     /// Only available on macos(10.15), ios(13.0)
+    pub fn set_hazard_tracking_mode(&self, hazard_tracking_mode: MTLHazardTrackingMode) {
+        unsafe { msg_send![self, setHazardTrackingMode: hazard_tracking_mode] }
+    }
+
+    /// Only available on macos(10.15), ios(13.0)
     pub fn resource_options(&self) -> MTLResourceOptions {
         unsafe { msg_send![self, resourceOptions] }
     }
@@ -205,5 +210,10 @@ impl HeapDescriptorRef {
     /// Only available on macos(10.15), ios(13.0)
     pub fn heap_type(&self) -> MTLHeapType {
         unsafe { msg_send![self, type] }
+    }
+
+    /// Only available on macos(10.15), ios(13.0)
+    pub fn set_heap_type(&self, type_: MTLHeapType) {
+        unsafe { msg_send![self, setType: type_] }
     }
 }
