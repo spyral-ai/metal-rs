@@ -37,7 +37,7 @@ dispatch = { version = "0.2", optional = true }
 paste = "1"
 
 [dependencies.objc]
-version = "0.2.4"
+version = "0.2.7"
 
 [dev-dependencies]
 cocoa = "0.25.0"
